@@ -63,8 +63,7 @@
         "no-useless-return":"off",
         "no-nested-ternary":"off",
         "simple-import-sort/imports": "error",
-        "simple-import-sort/exports": "error",
-        "react/state-in-constructor":"off"
+        "simple-import-sort/exports": "error"
     },
     "settings": {
         "import/resolver": {

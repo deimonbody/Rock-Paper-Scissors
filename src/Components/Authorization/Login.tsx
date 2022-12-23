@@ -2,20 +2,15 @@ import { joiResolver } from "@hookform/resolvers/joi";
 import { PATHS } from "@src/common/enum";
 import { ILogin } from "@src/common/interface";
 import { loginSchema } from "@src/common/schemas";
-import { useAuth } from "@src/hooks";
 import { useUserActions } from "@src/store/actions";
-import React, { useEffect } from "react";
+import React from "react";
 import { useForm } from "react-hook-form";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import styles from "./style.module.scss";
 
 export const Login = () => {
   const { getAsyncUserAction } = useUserActions();
-
-  const isAuth = useAuth();
-  const navigate = useNavigate();
-
   const {
     register,
     handleSubmit,
@@ -30,17 +25,10 @@ export const Login = () => {
     resolver: joiResolver(loginSchema),
   });
 
-  useEffect(() => {
-    if (isAuth) {
-      navigate(PATHS.MAIN_PAGE);
-    }
-  }, [isAuth]);
-
   const login = (data: ILogin) => {
     getAsyncUserAction({ email: data.email, password: data.password });
     reset();
   };
-  // if (isLoading) return <Loader />;
   return (
     <div className={styles.wrapper}>
       <p className={styles.title}>Login</p>

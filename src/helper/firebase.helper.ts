@@ -17,6 +17,7 @@ export const getUserName = async (userEmail: string) => {
   });
   return name;
 };
+
 export const setNewUserToDB = async ({ email, password, name }: IRegister) => {
   await addDoc(collection(db, "users"), {
     email,
@@ -24,6 +25,7 @@ export const setNewUserToDB = async ({ email, password, name }: IRegister) => {
     password,
   });
 };
+
 export const signIn = async ({ email, password }: ILogin): Promise<IUser> => {
   const response = await signInWithEmailAndPassword(fbAuth, email, password);
   const { uid } = response.user;
@@ -35,6 +37,7 @@ export const signIn = async ({ email, password }: ILogin): Promise<IUser> => {
   currentUser.name = await getUserName(email);
   return currentUser;
 };
+
 export const signUp = async ({
   email,
   password,
@@ -53,6 +56,7 @@ export const signUp = async ({
     name,
   };
 };
+
 export const logout = async () => {
   await signOut(fbAuth);
 };

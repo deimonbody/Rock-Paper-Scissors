@@ -2,13 +2,11 @@
 @import "../../styles/mixins.scss";
 
 .wrapper{
-    display: flex;
+    @include flexMixin(column,center);
     position: fixed;
     top:50%;
     left:50%;
     transform: translate(-50%,-50%);
-    flex-direction: column;
-    align-items: center;
     width:500px;
 }
 
@@ -24,7 +22,7 @@
     margin-bottom: 20px;
     position: relative;
     width:100%;
-    &Input{
+    &__input{
         width:100%;
         padding:10px 10px 10px 15px;
         border-radius: 5px;
@@ -37,7 +35,7 @@
             font-size:.8rem;
         }
     }
-    &Error{
+    &__error{
         color:$error;
         @include ff-medium;
         position: absolute;
@@ -61,7 +59,7 @@
     @include ff-light;
     color:$black;
     font-size:1rem;
-    &Link{
+    &__link{
         color:$blue;
         @include ff-bold;
         cursor: pointer;

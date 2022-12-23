@@ -37,31 +37,33 @@ const Register = () => {
         <div className={styles.inputBlock}>
           <input
             {...register("name")}
-            className={styles.inputBlockInput}
+            className={styles.inputBlock__input}
             placeholder="name:"
           />
           {errors && errors.name && (
-            <p className={styles.inputBlockError}>{errors.name.message}</p>
+            <p className={styles.inputBlock__error}>{errors.name.message}</p>
           )}
         </div>
         <div className={styles.inputBlock}>
           <input
             {...register("email")}
-            className={styles.inputBlockInput}
+            className={styles.inputBlock__input}
             placeholder="email:"
           />
           {errors && errors.email && (
-            <p className={styles.inputBlockError}>{errors.email.message}</p>
+            <p className={styles.inputBlock__error}>{errors.email.message}</p>
           )}
         </div>
         <div className={styles.inputBlock}>
           <input
             {...register("password")}
-            className={styles.inputBlockInput}
+            className={styles.inputBlock__input}
             placeholder="password:"
           />
           {errors && errors.password && (
-            <p className={styles.inputBlockError}>{errors.password.message}</p>
+            <p className={styles.inputBlock__error}>
+              {errors.password.message}
+            </p>
           )}
         </div>
       </div>
@@ -71,7 +73,7 @@ const Register = () => {
       <p className={styles.register}>
         Already have the accoutn ?{" "}
         <Link to={PATHS.LOGIN}>
-          <span className={styles.registerLink}>Login</span>
+          <span className={styles.register__link}>Login</span>
         </Link>
       </p>
     </div>

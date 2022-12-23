@@ -3,12 +3,12 @@ import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCTm784xoUyYForelcga-P_30C0tyurhcM",
-  authDomain: "rock-paper-scissors-c74f9.firebaseapp.com",
-  projectId: "rock-paper-scissors-c74f9",
-  storageBucket: "rock-paper-scissors-c74f9.appspot.com",
-  messagingSenderId: "386384777615",
-  appId: "1:386384777615:web:4392ea93e8cd4c3892bbfa",
+  apiKey: process.env.REACT_APP_ApiKey,
+  authDomain: process.env.REACT_APP_AuthDomain,
+  projectId: process.env.REACT_APP_ProjectId,
+  storageBucket: process.env.REACT_APP_StorageBucket,
+  messagingSenderId: process.env.REACT_APP_MessagingSenderId,
+  appId: process.env.REACT_APP_AppId,
 };
 
 export const fbApp = initializeApp(firebaseConfig);

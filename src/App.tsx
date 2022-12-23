@@ -3,7 +3,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { fbAuth } from "@src/config/firebase";
 import { getUserName } from "@src/helper/firebase.helper";
 import { useAuth } from "@src/hooks";
-import { Routing } from "@src/Route/Routing";
+import { Routing } from "@src/route/Routing";
 import { useUserActions } from "@src/store/actions";
 import { onAuthStateChanged } from "firebase/auth";
 import React, { useEffect } from "react";

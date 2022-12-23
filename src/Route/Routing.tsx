@@ -1,6 +1,6 @@
 import { PATHS } from "@src/common/enum";
-import { Login, MainPage, Register } from "@src/pages";
 import { useAuth } from "@src/hooks";
+import { Login, MainPage, Register } from "@src/pages";
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 

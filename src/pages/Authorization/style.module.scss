@@ -1,5 +1,5 @@
-@import "../../../styles/variabels.scss";
-@import "../../../styles/mixins.scss";
+@import "../../styles/variabels.scss";
+@import "../../styles/mixins.scss";
 
 .wrapper{
     @include flexMixin(column,center);

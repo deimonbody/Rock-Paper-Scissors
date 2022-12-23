@@ -1,0 +1,37 @@
+@mixin fonts($fontName,$url){
+    @font-face {
+        font-family: $fontName;
+        src: url($url);
+    }
+}
+
+@mixin flexMixin($flexDirection:row,$alignItems:flex-start,$justifyContent:flex-start){
+    display: flex;
+    flex-direction: $flexDirection;
+    align-items: $alignItems;
+    justify-content: $justifyContent;
+}
+
+@mixin ff-bold{
+    font-family: "Montserrat-Bold";
+    font-weight: 700;
+  }
+@mixin  ff-light{
+    font-family: "Montserrat-Light";
+    font-weight: 400;
+  }
+@mixin  ff-medium{
+    font-family: "Montserrat-Medium";
+    font-weight: 500;
+}
+
+@mixin buttonMixin{
+    color:white;
+    background-color: $blue;
+    @include ff-medium;
+    padding: 10px 25px;
+    border:0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+  

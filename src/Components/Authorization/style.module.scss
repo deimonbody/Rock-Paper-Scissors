@@ -1,0 +1,69 @@
+@import "../../styles/variabels.scss";
+@import "../../styles/mixins.scss";
+
+.wrapper{
+    display: flex;
+    position: fixed;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    flex-direction: column;
+    align-items: center;
+    width:500px;
+}
+
+.title {
+    font-size:1.7rem;
+    color:$black;
+    @include ff-bold;
+    margin-bottom: 20px;
+}
+
+.inputBlock {
+    @include flexMixin(column);
+    margin-bottom: 20px;
+    position: relative;
+    width:100%;
+    &Input{
+        width:100%;
+        padding:10px 10px 10px 15px;
+        border-radius: 5px;
+        outline: none;
+        margin-bottom: 20px;
+        font-size:.9rem;
+        &::placeholder{
+            color:$gray;
+            @include ff-light;
+            font-size:.8rem;
+        }
+    }
+    &Error{
+        color:$error;
+        @include ff-medium;
+        position: absolute;
+        bottom:-2px;
+        font-size:.8rem;
+    }
+}
+
+.inputsWrapper{
+    width:100%;
+    @include flexMixin(column,center,center);
+}
+
+.button{
+    @include buttonMixin;
+    font-size:1rem;
+    margin-bottom:20px;
+}
+
+.register{
+    @include ff-light;
+    color:$black;
+    font-size:1rem;
+    &Link{
+        color:$blue;
+        @include ff-bold;
+        cursor: pointer;
+    }
+}

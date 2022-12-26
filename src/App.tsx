@@ -7,7 +7,10 @@ import { Routing } from "@src/route/Routing";
 import { useUserActions } from "@src/store/actions";
 import { onAuthStateChanged } from "firebase/auth";
 import React, { useEffect } from "react";
+import { ErrorBoundary } from "react-error-boundary";
 import { ToastContainer } from "react-toastify";
+
+import CustomErrorBoundary from "./components/CustomErrorBoundary/CustomErrorBoundary";
 
 function App() {
   const { setUserActions } = useUserActions();
@@ -26,9 +29,19 @@ function App() {
       }
     });
   }, []);
-
+  const errorHandler = (
+    err: Error,
+    errInfo: {
+      componentStack: string;
+    },
+  ) => {
+    console.log(err, errInfo);
+  };
   return (
-    <>
+    <ErrorBoundary
+      FallbackComponent={CustomErrorBoundary}
+      onError={errorHandler}
+    >
       <Routing />
       <ToastContainer
         position="top-right"
@@ -42,7 +55,7 @@ function App() {
         pauseOnHover={false}
         theme="light"
       />
-    </>
+    </ErrorBoundary>
   );
 }
 

@@ -6,16 +6,22 @@ import { useAuth } from "@src/hooks";
 import { Routing } from "@src/route/Routing";
 import { useUserActions } from "@src/store/actions";
 import { onAuthStateChanged } from "firebase/auth";
+import i18next from "i18next";
 import React, { useEffect } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import { ToastContainer } from "react-toastify";
 
+import { LanguagesEnum } from "./common/enum";
 import CustomErrorBoundary from "./components/CustomErrorBoundary/CustomErrorBoundary";
 
 function App() {
   const { setUserActions } = useUserActions();
   const isAuth = useAuth();
+  const { changeLanguage } = useUserActions();
+
   useEffect(() => {
+    changeLanguage(i18next.resolvedLanguage as LanguagesEnum);
+
     onAuthStateChanged(fbAuth, async (authUser) => {
       if (!isAuth && authUser) {
         const { email, uid } = authUser;
@@ -37,6 +43,7 @@ function App() {
   ) => {
     console.log(err, errInfo);
   };
+
   return (
     <ErrorBoundary
       FallbackComponent={CustomErrorBoundary}

@@ -1,3 +1,4 @@
+import { LanguagesEnum } from "@src/common/enum";
 import { ILogin, IRegister, IUser } from "@src/common/interface";
 
 import { ILogout, ISetUser, UserActions } from "./common";
@@ -26,3 +27,8 @@ export const signUpAsyncActions = ({ email, password, name }: IRegister) => ({
 export const setUserRejected = () => ({ type: UserActions.SET_USER_REJECTED });
 
 export const logoutAction = (): ILogout => ({ type: UserActions.LOGOUT });
+
+export const changeLanguage = (code: LanguagesEnum) => ({
+  type: UserActions.CHANGE_LANGUADE,
+  payload: code,
+});

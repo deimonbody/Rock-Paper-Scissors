@@ -1,0 +1,23 @@
+@import "../../styles/mixins.scss";
+.header{
+    padding:30px 0;
+    @include flexMixin(row,center);
+    @media screen and (max-width: 768px) {
+    @include flexMixin(column,center,center)
+    }
+}
+.header__userName{
+    font-size:1.2rem;
+    @include ff-bold();
+    flex-grow: 1;      
+    @media screen and (max-width: 768px){
+        margin-bottom: 20px;
+    }
+}
+.header__btn {
+    font-size:.9rem;
+    margin-right:20px;
+    @media screen and (max-width: 768px){
+        margin-bottom: 20px;
+    }
+}

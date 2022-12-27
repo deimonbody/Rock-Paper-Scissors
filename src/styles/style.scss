@@ -11,30 +11,10 @@ a{
   text-decoration: none;  
 }
 
-.wrapper {
-  max-width: 1200px;
-  padding: 0 20px;
-  margin: 0 auto;
-  @media screen and (max-width: 1200px) {
-    max-width: 992px;
-  }
-  @media screen and (max-width: 992px) {
-    max-width: 768px;
-  }
-  @media screen and (max-width: 768px) {
-    max-width: 576px;
-  }
-  @media screen and (max-width: 576px) {
-    max-width: 100%;
-    padding: 0 10px;
-  }
+body{
+  
 }
 
 @include fonts("Montserrat-Bold","../fonts/Montserrat-Bold.ttf");
 @include fonts("Montserrat-Light","../fonts/Montserrat-Light.ttf");
 @include fonts("Montserrat-Medium","../fonts/Montserrat-Medium.ttf");
-
-.ff-bold{
-  font-family: "Montserrat-Bold";
-    font-weight: 700;
-}

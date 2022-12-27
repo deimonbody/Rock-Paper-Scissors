@@ -1,0 +1,25 @@
+@import "../../styles/mixins.scss";
+
+.room{
+    @include flexMixin(column,center,center);
+    padding:25px 20px;
+    background-color: #f8f8f8; 
+    border-radius: 5px;
+}
+
+.room__title{
+    font-size:1rem;
+    @include ff-bold();
+    margin-bottom: 20px;
+}
+
+.room__btn {
+    font-size:.9rem;
+    margin-bottom: 10px;
+}
+
+.room__status {
+    font-size:.9rem;
+    color:#acaaaa;
+    @include ff-medium();
+}

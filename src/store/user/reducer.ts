@@ -1,8 +1,11 @@
+import { LanguagesEnum } from "@src/common/enum";
+
 import { IInitialState, UserAction, UserActions } from "./common";
 
 const initialState: IInitialState = {
   user: { name: "", email: "", uid: "" },
   isLoading: false,
+  language: LanguagesEnum.ENGLISH,
 };
 
 export const userReducer = (
@@ -37,6 +40,9 @@ export const userReducer = (
         ...state,
         isLoading: false,
       };
+    }
+    case UserActions.CHANGE_LANGUADE: {
+      return { ...state, language: actions.payload };
     }
     default: {
       return state;

@@ -1,8 +1,10 @@
+import { LanguagesEnum } from "@src/common/enum";
 import { ILogin, IRegister, IUser } from "@src/common/interface";
 
 export interface IInitialState {
   user: IUser;
   isLoading: boolean;
+  language: LanguagesEnum;
 }
 export enum UserActions {
   SET_USER = "SET_USER",
@@ -11,6 +13,7 @@ export enum UserActions {
   LOGOUT = "LOGOUT",
   SIGH_UP_ASYNC = "SIGN_UP_ASYCN",
   SET_USER_REJECTED = "SET_USER_REJECTED",
+  CHANGE_LANGUADE = "CHANGE_LANGUAGE",
 }
 
 export interface ISetUser {
@@ -37,14 +40,18 @@ export interface ISighUpAsync {
 export interface ISetUserRejected {
   type: UserActions.SET_USER_REJECTED;
 }
-
+export interface IChangeLanguage {
+  type: UserActions.CHANGE_LANGUADE;
+  payload: LanguagesEnum;
+}
 export type UserAction =
   | ISetUser
   | ISetLoading
   | ISetAsyncUser
   | ILogout
   | ISighUpAsync
-  | ISetUserRejected;
+  | ISetUserRejected
+  | IChangeLanguage;
 
 export type AsyncGetUser = {
   type: UserActions.SET_ASYNC_USER;

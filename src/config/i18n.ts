@@ -21,6 +21,8 @@ export default i18n
           welcome: "Welcome",
           createNewRoom: "Create New Room",
           join: "Join",
+          create: "Create",
+          close: "Close",
         },
       },
       uk: {
@@ -36,6 +38,8 @@ export default i18n
           welcome: "Вітаємо",
           createNewRoom: "Створити Нову Кімнату",
           join: "Приєднатися",
+          create: "Створити",
+          close: "Закрити",
         },
       },
       spa: {
@@ -51,6 +55,8 @@ export default i18n
           welcome: "Bienvenidas",
           createNewRoom: "Crear nueva habitación",
           join: "Unirse",
+          create: "Crear",
+          close: "Cerrar",
         },
       },
     },

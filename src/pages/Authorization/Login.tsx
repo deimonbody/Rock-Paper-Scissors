@@ -13,6 +13,7 @@ import styles from "./style.module.scss";
 
 export const Login = () => {
   const { getAsyncUserAction } = useUserActions();
+
   const {
     register,
     handleSubmit,
@@ -26,11 +27,14 @@ export const Login = () => {
     },
     resolver: joiResolver(loginSchema),
   });
+
   const { t } = useTranslation();
+
   const login = (data: ILogin) => {
     getAsyncUserAction({ email: data.email, password: data.password });
     reset();
   };
+
   return (
     <div className={styles.wrapper}>
       <p className={styles.title}>{t(LanguageWord.login)}</p>
@@ -38,23 +42,21 @@ export const Login = () => {
         <div className={styles.inputBlock}>
           <input
             {...register("email")}
-            className={styles.inputBlock__input}
+            className={styles.input}
             placeholder="email:"
           />
           {errors && errors.email && (
-            <p className={styles.inputBlock__error}>{errors.email.message}</p>
+            <p className={styles.inputError}>{errors.email.message}</p>
           )}
         </div>
         <div className={styles.inputBlock}>
           <input
             {...register("password")}
-            className={styles.inputBlock__input}
+            className={styles.input}
             placeholder="password:"
           />
           {errors && errors.password && (
-            <p className={styles.inputBlock__error}>
-              {errors.password.message}
-            </p>
+            <p className={styles.inputError}>{errors.password.message}</p>
           )}
         </div>
       </div>

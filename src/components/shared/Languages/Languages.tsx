@@ -11,6 +11,7 @@ import styles from "./style.module.scss";
 const Languages = () => {
   const { changeLanguage } = useUserActions();
   const { i18n } = useTranslation();
+
   const changeLanguageHanlder = (code: LanguagesEnum) => {
     changeLanguage(code);
     i18n.changeLanguage(code);

@@ -3,12 +3,14 @@
 .wrapper{
     @include flexMixin(row,center);
 }
+
 .imgWrapper {
     width: 25px;
     height: 15px;
     margin-right: 15px;
     cursor: pointer;
 }
+
 .img{
     width:100%;
     height: 100%;

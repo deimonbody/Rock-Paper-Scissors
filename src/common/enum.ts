@@ -22,4 +22,6 @@ export enum LanguageWord {
   welcome = "welcome",
   createNewRoom = "createNewRoom",
   join = "join",
+  create = "create",
+  close = "close",
 }

@@ -13,6 +13,7 @@ import styles from "./style.module.scss";
 
 const Register = () => {
   const { signUpAsyncActions } = useUserActions();
+
   const {
     register,
     handleSubmit,
@@ -27,12 +28,15 @@ const Register = () => {
     },
     resolver: joiResolver(registerSchema),
   });
+
   const registerHandler = (data: IRegister) => {
     const { email, password, name } = data;
     signUpAsyncActions({ email, password, name });
     reset();
   };
+
   const { t } = useTranslation();
+
   return (
     <div className={styles.wrapper}>
       <p className={styles.title}>{t(LanguageWord.register)}</p>
@@ -40,33 +44,31 @@ const Register = () => {
         <div className={styles.inputBlock}>
           <input
             {...register("name")}
-            className={styles.inputBlock__input}
+            className={styles.input}
             placeholder="name:"
           />
           {errors && errors.name && (
-            <p className={styles.inputBlock__error}>{errors.name.message}</p>
+            <p className={styles.inputError}>{errors.name.message}</p>
           )}
         </div>
         <div className={styles.inputBlock}>
           <input
             {...register("email")}
-            className={styles.inputBlock__input}
+            className={styles.input}
             placeholder="email:"
           />
           {errors && errors.email && (
-            <p className={styles.inputBlock__error}>{errors.email.message}</p>
+            <p className={styles.inputError}>{errors.email.message}</p>
           )}
         </div>
         <div className={styles.inputBlock}>
           <input
             {...register("password")}
-            className={styles.inputBlock__input}
+            className={styles.input}
             placeholder="password:"
           />
           {errors && errors.password && (
-            <p className={styles.inputBlock__error}>
-              {errors.password.message}
-            </p>
+            <p className={styles.inputError}>{errors.password.message}</p>
           )}
         </div>
       </div>

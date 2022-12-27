@@ -34,3 +34,13 @@ export const registerSchema = joi.object({
     .message("Name should be less than 20 symbols")
     .required(),
 });
+
+export const createNewRoomSchema = joi.object({
+  roomName: joi
+    .string()
+    .min(4)
+    .message("The name of room shouldn`t be less than 4 symbols")
+    .max(20)
+    .message("The name of room shouldn`t be more than 20 symbols")
+    .required(),
+});

@@ -14,3 +14,7 @@ export interface IProtectedRoute {
   children: JSX.Element;
   isAuth: boolean;
 }
+
+export interface ICreateNewRoom {
+  roomName: string;
+}

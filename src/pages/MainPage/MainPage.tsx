@@ -1,23 +1,14 @@
-import { LanguageWord } from "@src/common/enum";
-import { Languages } from "@src/components/shared";
-import { logout } from "@src/helper/firebase.helper";
-import { useUserActions } from "@src/store/actions";
+import MainPageHeader from "@src/components/MainPageHeader/MainPageHeader";
+import Rooms from "@src/components/Rooms/Rooms";
+import Wrapper from "@src/components/Wrapper/Wrapper";
 import React from "react";
-import { useTranslation } from "react-i18next";
 
 const MainPage = () => {
-  const { t } = useTranslation();
-  const { logoutAction } = useUserActions();
-  const signOutHandler = () => {
-    logout();
-    logoutAction();
-  };
   return (
-    <div>
-      <p>Main page</p>
-      <button onClick={signOutHandler}>{t(LanguageWord.logout)}</button>
-      <Languages />
-    </div>
+    <Wrapper>
+      <MainPageHeader />
+      <Rooms />
+    </Wrapper>
   );
 };
 

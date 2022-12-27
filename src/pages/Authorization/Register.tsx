@@ -1,10 +1,12 @@
 import { joiResolver } from "@hookform/resolvers/joi";
-import { PATHS } from "@src/common/enum";
+import { LanguageWord, PATHS } from "@src/common/enum";
 import { IRegister } from "@src/common/interface";
 import { registerSchema } from "@src/common/schemas";
+import Button from "@src/components/shared/Button/Button";
 import { useUserActions } from "@src/store/actions";
 import React from "react";
 import { useForm } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
 import styles from "./style.module.scss";
@@ -30,9 +32,10 @@ const Register = () => {
     signUpAsyncActions({ email, password, name });
     reset();
   };
+  const { t } = useTranslation();
   return (
     <div className={styles.wrapper}>
-      <p className={styles.title}>Register</p>
+      <p className={styles.title}>{t(LanguageWord.register)}</p>
       <div className={styles.inputsWrapper}>
         <div className={styles.inputBlock}>
           <input
@@ -67,13 +70,17 @@ const Register = () => {
           )}
         </div>
       </div>
-      <button onClick={handleSubmit(registerHandler)} className={styles.button}>
-        Register
-      </button>
+      <Button
+        clickHandler={handleSubmit(registerHandler)}
+        text={t(LanguageWord.register)}
+        className={styles.button}
+      />
       <p className={styles.register}>
-        Already have the accoutn ?{" "}
+        {t(LanguageWord.registerText1)}
         <Link to={PATHS.LOGIN}>
-          <span className={styles.register__link}>Login</span>
+          <span className={styles.register__link}>
+            {t(LanguageWord.registerText2)}
+          </span>
         </Link>
       </p>
     </div>

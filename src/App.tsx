@@ -35,6 +35,7 @@ function App() {
       }
     });
   }, []);
+
   const errorHandler = (
     err: Error,
     errInfo: {

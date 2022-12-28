@@ -2,6 +2,7 @@ export enum PATHS {
   LOGIN = "/login",
   MAIN_PAGE = "/",
   REGISTER = "/register",
+  GAME = "/game",
 }
 
 export enum LanguagesEnum {
@@ -26,4 +27,9 @@ export enum LanguageWord {
   close = "close",
   errorText1 = "errorText1",
   errorText2 = "errorText2",
+  user = "user",
+  score = "score",
+  rock = "rock",
+  paper = "paper",
+  scissors = "scissors",
 }

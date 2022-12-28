@@ -9,8 +9,10 @@ interface IProps {
   title: string;
   clickHandler: () => void;
 }
+
 const Room: React.FC<IProps> = ({ title, clickHandler }) => {
   const { t } = useTranslation();
+
   return (
     <div className={styles.room}>
       <p className={styles.room__title}>{title}</p>

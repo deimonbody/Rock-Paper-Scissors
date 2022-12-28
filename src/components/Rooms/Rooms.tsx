@@ -7,6 +7,7 @@ const Rooms = () => {
   const joinHanlder = () => {
     console.log("Joinde to room");
   };
+
   return (
     <div className={styles.rooms}>
       <Room title="First Room" clickHandler={joinHanlder} />

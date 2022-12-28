@@ -9,14 +9,21 @@ import { Languages } from "../shared";
 import Button from "../shared/Button/Button";
 import styles from "./style.module.scss";
 
-const MainPageHeader = () => {
+interface IProps {
+  showHandler: () => void;
+}
+
+const MainPageHeader: React.FC<IProps> = ({ showHandler }) => {
   const { t } = useTranslation();
+
   const { user } = useAppSelector((store) => store.userReducer);
   const { logoutAction } = useUserActions();
+
   const signOutHandler = () => {
     logout();
     logoutAction();
   };
+
   return (
     <div className={styles.header}>
       <p className={styles.header__userName}>
@@ -25,6 +32,7 @@ const MainPageHeader = () => {
       <Button
         text={t(LanguageWord.createNewRoom)}
         className={styles.header__btn}
+        clickHandler={showHandler}
       />
       <Button
         clickHandler={signOutHandler}

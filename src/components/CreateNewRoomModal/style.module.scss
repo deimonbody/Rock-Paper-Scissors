@@ -1,0 +1,62 @@
+@import "../../styles/mixins.scss";
+
+.modal{
+    background-color:white;
+    border-radius: 5px;
+    @include flexMixin(column,center,center);
+    padding: 20px 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 480px;
+    @media screen and (max-width: 576px) {
+        width:320px;
+    }
+}
+
+.modalWrapper{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(144, 143, 143, 0.6);
+  z-index: 1000;
+}
+
+.modal__title{
+    @include ff-bold();
+    font-size:1.1rem;
+    margin-bottom:20px;
+}
+
+.modal__control{
+    @include flexMixin(row,center);
+    align-self: flex-end
+}
+
+.modal__inpBlock{
+    @include inpWrapper();
+    
+}
+
+.modal__inp{
+    @include inp();
+    margin-bottom: 20px;
+    @media screen and (max-width: 576px) {
+        margin-bottom: 40px;
+    }
+}
+
+.modal__inpError{
+    @include inpError();
+}
+
+.modal__btn {
+    font-size:.9rem;
+}
+
+.modal__btn_first{
+    margin-right: 10px;
+}

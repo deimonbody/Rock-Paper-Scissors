@@ -7,6 +7,7 @@ interface IProps {
   clickHandler?: () => void;
   className?: string;
 }
+
 const Button: React.FC<IProps> = ({ text, clickHandler, className }) => {
   return (
     <button onClick={clickHandler} className={`${styles.button} ${className}`}>

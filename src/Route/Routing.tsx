@@ -1,6 +1,7 @@
 import { PATHS } from "@src/common/enum";
 import { useAuth } from "@src/hooks";
 import { Login, MainPage, Register } from "@src/pages";
+import GamePage from "@src/pages/GamePage/GamePage";
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 
@@ -35,6 +36,7 @@ export const Routing = () => {
           </ProtectedAuthHOC>
         }
       />
+      <Route element={<GamePage />} path={`${PATHS.GAME}/:id`} />
     </Routes>
   );
 };

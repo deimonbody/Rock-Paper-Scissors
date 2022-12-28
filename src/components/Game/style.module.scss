@@ -1,0 +1,95 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variabels.scss";
+
+.header{
+    @include flexMixin(row,center,space-between);
+    align-self: stretch
+}
+
+.header__text {
+    @include ff-bold();
+    font-size:1.2rem;
+}
+
+.gameBlock__title{
+    @include ff-medium();
+    font-size:1rem;
+    margin-top:10px;
+}
+
+.gameBlock__img {
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width:40px;
+    height:40px;
+}
+
+.scoreBoard{
+    @include flexMixin(column);
+    align-self: stretch;
+}
+
+.scoreBoard__title{
+    font-size:1.2rem;
+    @include ff-bold();
+    text-align: center;
+    align-self: center;
+    margin:20px 0;
+}
+
+.scoreBoard__users{
+    @include flexMixin(row,center,space-between);
+    align-self: stretch;
+}
+
+.scoreBoard__userBlock{
+    @include flexMixin(column,center,center);
+    font-size: 1rem;
+    @include ff-bold();
+}
+
+.scoreBoard__score{
+    color:$blue;
+}
+
+.gameBlockWrapper{
+    @include flexMixin(column,center,center);
+    &_first{
+        grid-area:first;
+    }
+    &_second{
+        grid-area:second;
+    }
+    &_third{
+        grid-area:third;
+    }
+}
+
+.gameBlock {
+    cursor: pointer;
+    width:80px;
+    height:80px;
+    border-radius: 50%;
+    position: relative;
+    &_first{
+        border:5px solid $blue;
+    }
+    &_second{
+        border:5px solid $error;
+    }
+    &_third{
+        border:5px solid $purple;
+    }
+}
+
+.game{
+    margin-top: 100px;
+    display: grid;
+   grid-template-areas: "first second"
+                        "third third";
+    row-gap: 40px;
+    column-gap: 120px;
+    align-self: center;
+}

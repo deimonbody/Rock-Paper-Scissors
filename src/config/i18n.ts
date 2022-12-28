@@ -23,6 +23,8 @@ export default i18n
           join: "Join",
           create: "Create",
           close: "Close",
+          errorText1: "Ooooops...Something Went wrong",
+          errorText2: "Try to reload the page",
         },
       },
       uk: {
@@ -40,6 +42,8 @@ export default i18n
           join: "Приєднатися",
           create: "Створити",
           close: "Закрити",
+          errorText1: "Йой.....Щось пішло не так",
+          errorText2: "Спробуй перезавантажити сторінку",
         },
       },
       spa: {
@@ -57,6 +61,8 @@ export default i18n
           join: "Unirse",
           create: "Crear",
           close: "Cerrar",
+          errorText1: "Ups... Algo salió mal",
+          errorText2: "Intenta recargar la página",
         },
       },
     },

@@ -24,4 +24,6 @@ export enum LanguageWord {
   join = "join",
   create = "create",
   close = "close",
+  errorText1 = "errorText1",
+  errorText2 = "errorText2",
 }
